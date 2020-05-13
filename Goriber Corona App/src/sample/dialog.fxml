@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.DialogController"
+            prefHeight="500" prefWidth="700.0">
+    <headerText>
+        Details about Countries
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10" alignment="CENTER" style="-fx-background-color: white">
+            <VBox alignment="CENTER">
+                <Label text="Country"  style="-fx-font-size: 20"/>
+                <Label fx:id="name"/>
+                <Label text="Total Cases" style="-fx-font-size: 20"/>
+                <Label fx:id="cases" />
+                <Label text="Total Deaths" style="-fx-font-size: 20" textFill="red"/>
+                <Label fx:id="deaths" textFill="red" style="-fx-font-weight: bold"/>
+                <Label text="Total Recovered" style="-fx-font-size: 20;-fx-font-weight: bold" textFill="lightgreen"/>
+                <Label fx:id="recovered" textFill="lightgreen" style="-fx-font-weight: bold"/>
+                <Label text="Active Cases" style="-fx-font-size: 20"/>
+                <Label fx:id="active"/>
+                <HBox>
+                    <Label text="Last Updated: " style="-fx-font-size: 13"/>
+                    <Label fx:id="date"/>
+                    <Label text="  time: "/>
+                    <Label fx:id="time"/>
+                </HBox>
+            </VBox>
+
+        </GridPane>
+    </content>
+</DialogPane>

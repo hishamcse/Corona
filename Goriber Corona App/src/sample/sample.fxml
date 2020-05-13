@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane">
+    <top>
+        <GridPane prefWidth="-Infinity" prefHeight="35" style="-fx-background-color: cadetblue"  alignment="CENTER">
+            <Label text="Search" GridPane.rowIndex="0" GridPane.columnIndex="5"  prefHeight="40" style="-fx-text-fill: white" BorderPane.alignment="CENTER">
+                <graphic>
+                    <ImageView>
+                        <Image url="@/toolbarButtonGraphics/general/Search24.gif"/>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <TextField fx:id="textField" onAction="#showdialogsearch" GridPane.rowIndex="0" GridPane.columnIndex="6" prefHeight="30" prefWidth="200" promptText="Enter Country Name"/>
+        </GridPane>
+    </top>
+    <center>
+        <TableView fx:id="tableView">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <columns>
+                <TableColumn text="Country">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Cases">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cases"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Deaths">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="deaths"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Active">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="active"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.00" spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10"/>
+            </padding>
+            <children>
+                <Button  maxWidth="Infinity" mnemonicParsing="false" text="All Countries" onAction="#showcountry"/>
+                <Button  maxWidth="Infinity" mnemonicParsing="false" text="Show Data In Table" onAction="#showtable"/>
+            </children>
+            <ListView fx:id="listView" prefHeight="600" onMouseClicked="#showdialog">
+            </ListView>
+            <ProgressBar fx:id="progressbar" visible="false"/>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+</BorderPane>
